@@ -1,4 +1,4 @@
-const express = require(express);
+const express = require("express");
 
 const Library = require("./library.js");
 
@@ -11,6 +11,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/");
+app.get("/killers/:number", (req, res) => {
+  const number = req.params.number;
+  const killer = Library.getKillerByNumber(number);
+  if (!killer) {
+    return res.json({ message: "Please enter a valid number" });
+  }
+  res.json({ killer });
+});
 
 app.listen(PORT, () => console.log(`I am listening on port ${PORT}`));

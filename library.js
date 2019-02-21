@@ -254,10 +254,14 @@ const killers = {
   }
 };
 
-function getKillerByName(number) {
-  return killers[number].name;
+function getKillerByNumber(number) {
+  return killers[number];
+}
+
+function getKillerByName(name) {
+  return killers[name];
 }
 
 module.exports = {
-  getKillerByName
+  getKillerByNumber
 };
