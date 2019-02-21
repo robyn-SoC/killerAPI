@@ -258,9 +258,10 @@ function getKillerByNumber(number) {
   return killers[number];
 }
 
-function getKillerByName(name) {
-  return killers[name];
-}
+// function getKillerByName(name) {
+//     Object.values(killers).filter(function hello(itm) {
+//         itm.Name === 'Gary Ridgway'})[0];
+// }
 
 module.exports = {
   getKillerByNumber
